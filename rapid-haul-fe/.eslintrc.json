@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "next/core-web-vitals", // Use this if you're in a Next.js project
+    "plugin:prettier/recommended" // Integrates Prettier with ESLint
+  ],
+  "plugins": ["unused-imports"], // Add unused-imports plugin
+  "rules": {
+    "prettier/prettier": "error",
+    "unused-imports/no-unused-imports": "error", // Automatically removes unused imports
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}
