@@ -1,7 +1,7 @@
 'use client';
 import styles from './page.module.css';
 import MainPage from '@/components/MainPage';
-import CustomFooter from '@/components/Footer';
+import Footer from '@/components/components/Footer';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <MainPage />
       </main>
       <footer className={styles.footer}>
-        <CustomFooter />
+        <Footer />
       </footer>
     </div>
   );

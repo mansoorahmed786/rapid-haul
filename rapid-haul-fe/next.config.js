@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    images: {
+        domains: ['livedemo00.template-help.com'],
+    },
     async headers() {
         return [
             {
@@ -15,10 +18,10 @@ const nextConfig = {
         ]
     },
     experimental: {
-		staleTimes: {
-			dynamic: 0,
-		},
-	},
+        staleTimes: {
+            dynamic: 0,
+        },
+    },
 }
 
 module.exports = nextConfig
