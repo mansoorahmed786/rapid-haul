@@ -23,11 +23,11 @@ const Manufactures = () => {
           </a>
         </div>
         <Image
-  src="/manufactures.jpg"
-  alt="Blog Thumbnail"
-  width={300}
-  height={200}
-/>
+          src="/manufactures.jpg"
+          alt="Blog Thumbnail"
+          width={300}
+          height={200}
+        />
       </div>
     </section>
   );

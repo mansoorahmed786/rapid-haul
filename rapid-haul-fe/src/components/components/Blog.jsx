@@ -6,43 +6,37 @@ const blogPosts = [
   {
     date: 'FEB 19, 2015',
     title: 'The North American Auto Show will take place in Chicago',
-    image:
-      'scroll-image1.jpeg',
+    image: 'scroll-image1.jpeg',
     alt: 'Auto show',
   },
   {
     date: 'APR 29, 2014',
     title: 'New Drilling Method Opens Vast Oil Fields In Us',
-    image:
-      'scroll-image2.jpeg',
+    image: 'scroll-image2.jpeg',
     alt: 'Oil field',
   },
   {
     date: 'FEB 17, 2015',
     title: "Demanding 'Big Oil' pay its fair share",
-    image:
-      'scroll-image3.jpeg',
+    image: 'scroll-image3.jpeg',
     alt: 'Gas station',
   },
   {
     date: 'FEB 15, 2015',
     title: 'Sending oil prices up and down',
-    image:
-      'scroll-image3.jpeg',
+    image: 'scroll-image3.jpeg',
     alt: 'Oil rig',
   },
   {
     date: 'FEB 15, 2015',
     title: 'Sending oil prices up and down',
-    image:
-      'scroll-image2.jpeg',
+    image: 'scroll-image2.jpeg',
     alt: 'Oil rig',
   },
   {
     date: 'FEB 15, 2015',
     title: 'Sending oil prices up and down',
-    image:
-      'scroll-image1.jpeg',
+    image: 'scroll-image1.jpeg',
     alt: 'Oil rig',
   },
 ];

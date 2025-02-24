@@ -55,7 +55,7 @@ const CustomHeader = () => {
                 Logout
               </Button>
             ),
-          key: 'logout',
+            key: 'logout',
           },
         ]
       : [
@@ -74,14 +74,14 @@ const CustomHeader = () => {
 
   return (
     <main>
-          <Header
-      style={{
-        background: '#fff',
-        padding: '0 20px',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
+      <Header
+        style={{
+          background: '#fff',
+          padding: '0 20px',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
         <div className="header-wrapper">
           <Image src="logo.jpeg" alt="Logo" style={{ height: '60px' }} />
           <Menu
