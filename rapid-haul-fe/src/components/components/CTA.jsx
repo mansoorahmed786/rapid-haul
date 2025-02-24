@@ -1,6 +1,7 @@
 'use client';
 
-import { Link } from 'react-router-dom';
+import { Button } from 'antd';
+
 import './styles.css';
 
 const CTA = () => {
@@ -15,9 +16,7 @@ const CTA = () => {
           lubricants to keep engines moving and petrochemicals to make everyday
           items.
         </p>
-        <Link href="#" className="cta-button">
-          CONTACT US
-        </Link>
+        <Button type="link">Contact Us</Button>
       </div>
     </section>
   );

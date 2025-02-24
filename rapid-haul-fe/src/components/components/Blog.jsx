@@ -1,48 +1,48 @@
 import React from 'react';
 import './styles.css';
-import Image from 'next/image';
+import { Image } from 'antd';
 
 const blogPosts = [
   {
     date: 'FEB 19, 2015',
     title: 'The North American Auto Show will take place in Chicago',
     image:
-      'https://livedemo00.template-help.com/joomla_63689/images/blog/blog-thumb1.jpg',
+      'scroll-image1.jpeg',
     alt: 'Auto show',
   },
   {
     date: 'APR 29, 2014',
     title: 'New Drilling Method Opens Vast Oil Fields In Us',
     image:
-      'https://livedemo00.template-help.com/joomla_63689/images/blog/blog-thumb4.jpg',
+      'scroll-image2.jpeg',
     alt: 'Oil field',
   },
   {
     date: 'FEB 17, 2015',
     title: "Demanding 'Big Oil' pay its fair share",
     image:
-      'https://livedemo00.template-help.com/joomla_63689/images/blog/blog-thumb2.jpg',
+      'scroll-image3.jpeg',
     alt: 'Gas station',
   },
   {
     date: 'FEB 15, 2015',
     title: 'Sending oil prices up and down',
     image:
-      'https://livedemo00.template-help.com/joomla_63689/images/blog/blog-thumb4.jpg',
+      'scroll-image3.jpeg',
     alt: 'Oil rig',
   },
   {
     date: 'FEB 15, 2015',
     title: 'Sending oil prices up and down',
     image:
-      'https://livedemo00.template-help.com/joomla_63689/images/blog/blog-thumb1.jpg',
+      'scroll-image2.jpeg',
     alt: 'Oil rig',
   },
   {
     date: 'FEB 15, 2015',
     title: 'Sending oil prices up and down',
     image:
-      'https://livedemo00.template-help.com/joomla_63689/images/blog/blog-thumb4.jpg',
+      'scroll-image1.jpeg',
     alt: 'Oil rig',
   },
 ];

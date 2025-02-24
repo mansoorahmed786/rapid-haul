@@ -1,60 +1,96 @@
 'use client';
-
-import { useEffect } from 'react';
-import Image from 'next/image';
-
+import React, { useEffect } from 'react';
+import { Layout, Menu, Button, Image } from 'antd';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteUser, fetchUser } from '@/store/userSlice';
+import { logout } from '@/store/authSlice';
 import './styles.css';
-import { Link } from 'react-router-dom';
+
+const { Header } = Layout;
 
 const CustomHeader = () => {
-  useEffect(() => {
-    const header = document.querySelector('.header');
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        header?.classList.add('scrolled');
-      } else {
-        header?.classList.remove('scrolled');
-      }
-    };
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const userInfo = useSelector((state) => state.user);
+  const isAuthenticated = userInfo.email !== null;
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleLogout = async () => {
+    try {
+      dispatch(deleteUser());
+      dispatch(logout());
+      router.refresh();
+      router.push('/login');
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
+
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
+
+  // Define menu items
+  const menuItems = [
+    { label: 'Home', key: 'home', onClick: () => router.push('/') },
+    { label: 'About', key: 'about', onClick: () => router.push('/about') },
+    { label: 'Pages', key: 'pages', onClick: () => router.push('/pages') },
+    { label: 'Blog', key: 'blog', onClick: () => router.push('/blog') },
+    {
+      label: 'Gallery',
+      key: 'gallery',
+      onClick: () => router.push('/gallery'),
+    },
+    {
+      label: 'Contacts',
+      key: 'contacts',
+      onClick: () => router.push('/contacts'),
+    },
+    ...(isAuthenticated
+      ? [
+          {
+            label: (
+              <Button type="primary" danger onClick={handleLogout}>
+                Logout
+              </Button>
+            ),
+          key: 'logout',
+          },
+        ]
+      : [
+          {
+            label: 'Login',
+            key: 'login',
+            onClick: () => router.push('/login'),
+          },
+          {
+            label: 'Signup',
+            key: 'signup',
+            onClick: () => router.push('/signup'),
+          },
+        ]),
+  ];
 
   return (
     <main>
-      <header className="header">
+          <Header
+      style={{
+        background: '#fff',
+        padding: '0 20px',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
         <div className="header-wrapper">
-          <Link href="/" className="logo">
-            <Image
-              src="https://livedemo00.template-help.com/joomla_63689/images/logo.png"
-              width={200}
-              height={50}
-              alt="logo"
-            />
-          </Link>
-          <nav className="nav-links">
-            <Link href="#" className="nav-link">
-              HOME
-            </Link>
-            <Link href="#" className="nav-link">
-              ABOUT
-            </Link>
-            <Link href="#" className="nav-link">
-              PAGES
-            </Link>
-            <Link href="#" className="nav-link">
-              BLOG
-            </Link>
-            <Link href="#" className="nav-link">
-              GALLERY
-            </Link>
-            <Link href="#" className="nav-link">
-              CONTACTS
-            </Link>
-          </nav>
+          <Image src="logo.jpeg" alt="Logo" style={{ height: '60px' }} />
+          <Menu
+            mode="horizontal"
+            style={{ flex: 1, justifyContent: 'flex-end', border: 'none' }}
+            items={menuItems}
+          />
         </div>
-      </header>
+      </Header>
 
       <section className="hero">
         <div className="hero-content">

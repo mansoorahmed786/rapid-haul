@@ -8,7 +8,6 @@ import Manufactures from './components/Manufacturer';
 import Advantages from './components/Advantages';
 import Blog from './components/Blog';
 
-
 const MainPage = () => {
   return (
     <div style={{ margin: '0 auto', width: '100%' }}>
