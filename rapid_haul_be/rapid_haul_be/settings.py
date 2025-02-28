@@ -152,5 +152,5 @@ SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(hours=6)}
 
 CORS_ALLOW_ALL_ORIGINS: bool = True
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "https://api.rapidhaulvns.com","http://localhost:3000",
 ]
