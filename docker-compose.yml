@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
   db:
@@ -11,7 +11,7 @@ services:
       - "5434:5434"
 
   backend:
-    build:
+    build: 
       context: ./rapid_haul_be
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
@@ -26,14 +26,13 @@ services:
       - redis
 
   redis:
-    image: "redis:latest"
+    image: 'redis:latest'
 
   celery_worker:
-    build:
+    build: 
       context: ./rapid_haul_be
       dockerfile: Dockerfile
-    command:
-      ["python", "-m", "celery", "-A", "rapid_haul_be", "worker", "-l", "INFO"]
+    command: ["python", "-m", "celery", "-A", "rapid_haul_be", "worker", "-l", "INFO"]
     volumes:
       - ./rapid_haul_be:/app
     env_file:

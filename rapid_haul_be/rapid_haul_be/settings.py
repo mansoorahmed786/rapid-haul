@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-n!ro4v2h%40swld6yxh6_q*u!^9eu(d-!9fl0p(%@7q9yi)it5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api.rapidhaulvns.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -152,5 +152,5 @@ SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(hours=6)}
 
 CORS_ALLOW_ALL_ORIGINS: bool = True
 CORS_ALLOWED_ORIGINS = [
-    "https://api.rapidhaulvns.com","http://localhost:3000",
+    "http://localhost:3000",
 ]
