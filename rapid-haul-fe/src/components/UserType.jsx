@@ -49,10 +49,7 @@ const UserType = ({ setUserType }) => {
                   }}
                 />
               </div>
-              <Button
-                type="primary"
-                onClick={() => handleRoleSelection(role)}
-              >
+              <Button type="primary" onClick={() => handleRoleSelection(role)}>
                 {`Are you ${role}?`}
               </Button>
             </Col>

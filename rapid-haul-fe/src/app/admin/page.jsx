@@ -25,7 +25,6 @@ const Admin = () => {
 
   const [selectedMenu, setSelectedMenu] = useState('drivers');
 
-
   const driverColumns = [
     {
       title: 'Name',
@@ -113,7 +112,6 @@ const Admin = () => {
     },
   ];
 
-
   const companyColumns = [
     {
       title: 'Name',
@@ -199,7 +197,6 @@ const Admin = () => {
       }),
     },
   ];
-
 
   const notificationColumns = [
     {

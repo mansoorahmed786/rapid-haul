@@ -50,7 +50,7 @@ const DriverDashboardContent = () => {
           padding: '12px',
           display: 'flex',
           flexDirection: 'column',
-          height: '100%'
+          height: '100%',
         }}
       >
         <div style={{ flex: 1 }}>
@@ -59,7 +59,7 @@ const DriverDashboardContent = () => {
               width: '100%',
               height: '200px',
               objectFit: 'cover',
-              borderRadius: '8px'
+              borderRadius: '8px',
             }}
             alt={`Driver ${driver.id}`}
             src={driver.profile_picture || 'https://via.placeholder.com/150'}
@@ -68,12 +68,14 @@ const DriverDashboardContent = () => {
             <Text strong>{driver.name || `Driver ${driver.id}`}</Text>
           </div>
         </div>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '8px'
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
           <Button
             shape="circle"
             icon={<StarOutlined />}
@@ -104,7 +106,7 @@ const DriverDashboardContent = () => {
             background: 'white',
             padding: '16px',
             borderRadius: '8px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '20px' }}>
@@ -114,7 +116,7 @@ const DriverDashboardContent = () => {
                 maxWidth: '290px',
                 height: 'auto',
                 borderRadius: '8px',
-                margin: '0 auto'
+                margin: '0 auto',
               }}
               src="logo.jpeg"
               alt="Logo"
@@ -175,7 +177,7 @@ const DriverDashboardContent = () => {
               background: 'white',
               padding: '16px',
               borderRadius: '8px',
-              marginBottom: '16px'
+              marginBottom: '16px',
             }}
           >
             {/* Left Column - Image & Name */}
@@ -187,13 +189,15 @@ const DriverDashboardContent = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                paddingRight: '16px'
+                paddingRight: '16px',
               }}
             >
               <Image
                 width={120}
                 height={120}
-                src={userInfo?.profile_picture || 'https://via.placeholder.com/150'}
+                src={
+                  userInfo?.profile_picture || 'https://via.placeholder.com/150'
+                }
                 alt="Driver"
                 preview={false}
                 style={{ borderRadius: '8px' }}
@@ -203,7 +207,7 @@ const DriverDashboardContent = () => {
                 style={{
                   marginTop: '10px',
                   marginBottom: 0,
-                  textAlign: 'center'
+                  textAlign: 'center',
                 }}
               >
                 {userInfo?.name || 'John Doe'}
@@ -219,25 +223,33 @@ const DriverDashboardContent = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                paddingLeft: '16px'
+                paddingLeft: '16px',
               }}
             >
               <Row gutter={[16, 8]}>
                 <Col xs={12} sm={6} lg={24}>
                   <Text>Score: </Text>
-                  <Text strong style={{ color: '#1890ff' }}>85%</Text>
+                  <Text strong style={{ color: '#1890ff' }}>
+                    85%
+                  </Text>
                 </Col>
                 <Col xs={12} sm={6} lg={24}>
                   <Text>Safe Driving: </Text>
-                  <Text strong style={{ color: '#1890ff' }}>90%</Text>
+                  <Text strong style={{ color: '#1890ff' }}>
+                    90%
+                  </Text>
                 </Col>
                 <Col xs={12} sm={6} lg={24}>
                   <Text>Punctuality: </Text>
-                  <Text strong style={{ color: '#1890ff' }}>95%</Text>
+                  <Text strong style={{ color: '#1890ff' }}>
+                    95%
+                  </Text>
                 </Col>
                 <Col xs={12} sm={6} lg={24}>
                   <Text>Load Care: </Text>
-                  <Text strong style={{ color: '#1890ff' }}>98%</Text>
+                  <Text strong style={{ color: '#1890ff' }}>
+                    98%
+                  </Text>
                 </Col>
               </Row>
             </Col>
@@ -249,7 +261,7 @@ const DriverDashboardContent = () => {
               size={[8, 16]}
               style={{
                 width: '100%',
-                justifyContent: 'flex-start'
+                justifyContent: 'flex-start',
               }}
             >
               <Button>Driver Record</Button>
@@ -261,55 +273,55 @@ const DriverDashboardContent = () => {
 
           {/* Driver Cards */}
           <Row gutter={[16, 16]}>
-            {drivers && drivers.length > 0 ? (
-              drivers.map(renderDriverCard)
-            ) : (
-              [1, 2, 3].map((i) => (
-                <Col xs={24} sm={12} md={8} key={i}>
-                  <Card
-                    hoverable
-                    style={{ textAlign: 'center', height: '100%' }}
-                    bodyStyle={{
-                      padding: '12px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: '100%'
-                    }}
-                  >
-                    <div style={{ flex: 1 }}>
-                      <Image
-                        style={{
-                          width: '100%',
-                          height: '200px',
-                          objectFit: 'cover',
-                          borderRadius: '8px'
-                        }}
-                        alt={`Driver ${i}`}
-                        src="https://via.placeholder.com/150"
-                      />
-                      <div style={{ margin: '10px 0' }}>
-                        <Text strong>{`Driver ${i}`}</Text>
+            {drivers && drivers.length > 0
+              ? drivers.map(renderDriverCard)
+              : [1, 2, 3].map((i) => (
+                  <Col xs={24} sm={12} md={8} key={i}>
+                    <Card
+                      hoverable
+                      style={{ textAlign: 'center', height: '100%' }}
+                      bodyStyle={{
+                        padding: '12px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
+                      }}
+                    >
+                      <div style={{ flex: 1 }}>
+                        <Image
+                          style={{
+                            width: '100%',
+                            height: '200px',
+                            objectFit: 'cover',
+                            borderRadius: '8px',
+                          }}
+                          alt={`Driver ${i}`}
+                          src="https://via.placeholder.com/150"
+                        />
+                        <div style={{ margin: '10px 0' }}>
+                          <Text strong>{`Driver ${i}`}</Text>
+                        </div>
                       </div>
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      gap: '8px'
-                    }}>
-                      <Button
-                        shape="circle"
-                        icon={<StarOutlined />}
-                        style={{ border: '1px solid #d9d9d9' }}
-                      />
-                      <Button type="primary" style={{ flex: 1 }}>
-                        View Profile
-                      </Button>
-                    </div>
-                  </Card>
-                </Col>
-              ))
-            )}
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          gap: '8px',
+                        }}
+                      >
+                        <Button
+                          shape="circle"
+                          icon={<StarOutlined />}
+                          style={{ border: '1px solid #d9d9d9' }}
+                        />
+                        <Button type="primary" style={{ flex: 1 }}>
+                          View Profile
+                        </Button>
+                      </div>
+                    </Card>
+                  </Col>
+                ))}
           </Row>
         </Col>
       </Row>

@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-n!ro4v2h%40swld6yxh6_q*u!^9eu(d-!9fl0p(%@7q9yi)it5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['api.rapidhaulvns.com']
 
 
 # Application definition
