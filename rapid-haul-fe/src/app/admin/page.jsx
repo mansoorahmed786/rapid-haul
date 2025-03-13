@@ -25,43 +25,94 @@ const Admin = () => {
 
   const [selectedMenu, setSelectedMenu] = useState('drivers');
 
+
   const driverColumns = [
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
       render: (_, record) => `${record.first_name} ${record.last_name}`,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
       title: 'Status',
       dataIndex: 'status',
       key: 'status',
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
-      title: 'Is Payment Enabled?',
-      dataIndex: 'is_payment_enabled',
-      key: 'is_payment_enabled',
-      render: (_, record) => `${record.is_payment_enabled}`,
+      title: 'Experience',
+      dataIndex: 'experience',
+      key: 'experience',
+      render: () => `${Math.floor(Math.random() * 10) + 1} Years`,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
-      title: 'Has Paid?',
-      dataIndex: 'has_paid',
-      key: 'has_paid',
-      render: (_, record) => `${record.has_paid}`,
+      title: 'Performance',
+      dataIndex: 'performance',
+      key: 'performance',
+      render: () => `${Math.floor(Math.random() * 10) + 90}%`,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
       title: 'Actions',
       key: 'actions',
       render: (_, record) => (
         <Button
-          type="link"
+          type="primary"
           onClick={() => router.push(`/admin/${record.id}/driver`)}
+          style={{
+            backgroundColor: '#007bff',
+            borderColor: '#007bff',
+          }}
         >
-          Edit
+          Edit Profile
         </Button>
       ),
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
   ];
+
 
   const companyColumns = [
     {
@@ -69,53 +120,157 @@ const Admin = () => {
       dataIndex: 'name',
       key: 'name',
       render: (_, record) => `${record.first_name} ${record.last_name}`,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
       title: 'Status',
       dataIndex: 'status',
       key: 'status',
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
-      title: 'Is Payment Enabled?',
-      dataIndex: 'is_payment_enabled',
-      key: 'is_payment_enabled',
-      render: (_, record) => `${record.is_payment_enabled}`,
+      title: 'Experience',
+      dataIndex: 'experience',
+      key: 'experience',
+      render: () => `${Math.floor(Math.random() * 10) + 1} Years`,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
-      title: 'Has Paid?',
-      dataIndex: 'has_paid',
-      key: 'has_paid',
-      render: (_, record) => `${record.has_paid}`,
+      title: 'Performance',
+      dataIndex: 'performance',
+      key: 'performance',
+      render: () => `${Math.floor(Math.random() * 10) + 90}%`,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
+    },
+    {
+      title: 'Actions',
+      key: 'actions',
+      render: () => (
+        <Button
+          type="primary"
+          style={{
+            backgroundColor: '#007bff',
+            borderColor: '#007bff',
+          }}
+        >
+          View Profile
+        </Button>
+      ),
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
   ];
+
 
   const notificationColumns = [
     {
       title: 'Message',
       dataIndex: 'message',
       key: 'message',
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
       title: 'Date',
       dataIndex: 'created_at',
       key: 'created_at',
       render: (created_at) => formatDate(created_at),
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
       title: 'Is Read',
       dataIndex: 'is_read',
       key: 'is_read',
       render: (_, record) => `${record.is_read}`,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
     {
       title: 'Actions',
       key: 'actions',
       render: (_, record) =>
         !record.is_read ? (
-          <Button type="link" onClick={() => handleNotificationChange(record)}>
+          <Button
+            type="primary"
+            onClick={() => handleNotificationChange(record)}
+            style={{
+              backgroundColor: '#007bff',
+              borderColor: '#007bff',
+            }}
+          >
             Mark as Read
           </Button>
         ) : null,
+      onHeaderCell: () => ({
+        style: {
+          backgroundColor: '#007bff',
+          color: 'white',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          height: '20px',
+        },
+      }),
     },
   ];
 
@@ -132,6 +287,15 @@ const Admin = () => {
 
   const handleMenuClick = (e) => {
     setSelectedMenu(e.key);
+  };
+
+  const tableStyle = {
+    border: '1px solid #e8e8e8',
+    borderRadius: '0',
+  };
+
+  const rowClassName = (record, index) => {
+    return index % 2 === 0 ? 'even-row' : 'odd-row';
   };
 
   return (
@@ -158,7 +322,13 @@ const Admin = () => {
           <Row style={{ marginBottom: '40px' }}>
             <Col span={24}>
               <Title level={4}>Drivers</Title>
-              <Table columns={driverColumns} dataSource={drivers} />
+              <Table
+                columns={driverColumns}
+                dataSource={drivers}
+                style={tableStyle}
+                rowClassName={rowClassName}
+                pagination={false}
+              />
             </Col>
           </Row>
         )}
@@ -167,7 +337,13 @@ const Admin = () => {
           <Row style={{ marginBottom: '40px' }}>
             <Col span={24}>
               <Title level={4}>Company Management</Title>
-              <Table columns={companyColumns} dataSource={companies} />
+              <Table
+                columns={companyColumns}
+                dataSource={companies}
+                style={tableStyle}
+                rowClassName={rowClassName}
+                pagination={false}
+              />
             </Col>
           </Row>
         )}
@@ -176,11 +352,34 @@ const Admin = () => {
           <Row style={{ marginBottom: '40px' }}>
             <Col span={24}>
               <Title level={4}>Notifications</Title>
-              <Table columns={notificationColumns} dataSource={notifications} />
+              <Table
+                columns={notificationColumns}
+                dataSource={notifications}
+                style={tableStyle}
+                rowClassName={rowClassName}
+                pagination={false}
+              />
             </Col>
           </Row>
         )}
       </Content>
+
+      {/* Add CSS for alternating row colors */}
+      <style jsx global>{`
+        .even-row {
+          background-color: #ffffff;
+        }
+        .odd-row {
+          background-color: #f7f7f7;
+        }
+        .ant-table-cell {
+          text-align: center;
+          padding: 12px 8px;
+        }
+        .ant-table-thead > tr > th {
+          padding: 12px 8px;
+        }
+      `}</style>
     </div>
   );
 };

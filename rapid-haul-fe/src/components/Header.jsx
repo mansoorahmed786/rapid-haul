@@ -1,11 +1,12 @@
 'use client';
 import React, { useEffect } from 'react';
 import { Layout, Menu, Button, Image } from 'antd';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUser } from '@/store/userSlice';
-import { fetchUser } from '@/store/userSlice';
+import { deleteUser, fetchUser } from '@/store/userSlice';
 import { logout } from '@/store/authSlice';
+import './styles.css';
 
 const { Header } = Layout;
 
@@ -72,21 +73,41 @@ const CustomHeader = () => {
   ];
 
   return (
-    <Header
-      style={{
-        background: '#fff',
-        padding: '0 20px',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <Image src="logo.jpeg" alt="Logo" style={{ height: '60px' }} />
-      <Menu
-        mode="horizontal"
-        style={{ flex: 1, justifyContent: 'flex-end', border: 'none' }}
-        items={menuItems}
-      />
-    </Header>
+    <main>
+      <Header
+        style={{
+          background: '#fff',
+          padding: '0 20px',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <div className="header-wrapper">
+          <Image src="logo.jpeg" alt="Logo" style={{ height: '60px' }} />
+          <Menu
+            mode="horizontal"
+            style={{ flex: 1, justifyContent: 'flex-end', border: 'none' }}
+            items={menuItems}
+          />
+        </div>
+      </Header>
+
+      <section className="hero">
+        <div className="hero-content">
+          <p className="hero-subtitle">WELCOME TO OUR COMPANY!</p>
+          <h1 className="hero-title">
+            Recognized company for
+            <br />
+            <span style={{ fontWeight: 'bold' }}>QUALITY</span>, performance
+            <br />
+            and technology
+          </h1>
+          <Link href="#" className="hero-button">
+            READ MORE
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 };
 

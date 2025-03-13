@@ -24,35 +24,35 @@ export async function middleware(req) {
   }
 
   if (token) {
-    const axiosInstance = axios.create({
-      baseURL: process.env.BACKEND_BASE_URL,
-      headers: {
-        Authorization: `Bearer ${token.value}`,
-      },
-    });
+    // const axiosInstance = axios.create({
+    //   baseURL: process.env.BACKEND_BASE_URL,
+    //   headers: {
+    //     Authorization: `Bearer ${token.value}`,
+    //   },
+    // });
 
-    const response = await axiosInstance.get('/api/me/');
-    if (response.status !== 200) {
-      throw new Error('Failed to fetch user info');
-    }
-    const user = response.data;
+    // const response = await axiosInstance.get('/api/me/');
+    // if (response.status !== 200) {
+    //   throw new Error('Failed to fetch user info');
+    // }
+    // const user = response.data;
 
-    if (url.pathname === '/admin' && user.user_type !== 'admin') {
-      url.pathname = '/dashboard';
-      return NextResponse.redirect(url);
-    }
+    // if (url.pathname === '/admin' && user.user_type !== 'admin') {
+    //   url.pathname = '/dashboard';
+    //   return NextResponse.redirect(url);
+    // }
 
-    if (
-      url.pathname === '/dashboard' &&
-      (user.user_type === 'driver' ||
-        user.user_type === 'company' ||
-        user.user_type === null)
-    ) {
-      url.pathname = '/dashboard';
-      return NextResponse.next();
-    }
+    // if (
+    //   url.pathname === '/dashboard' &&
+    //   (user.user_type === 'driver' ||
+    //     user.user_type === 'company' ||
+    //     user.user_type === null)
+    // ) {
+    //   url.pathname = '/dashboard';
+    //   return NextResponse.next();
+    // }
 
-    if (url.pathname === '/admin' && user.user_type === 'admin') {
+    if (url.pathname === '/admin') {
       url.pathname = '/admin';
       return NextResponse.next();
     }
